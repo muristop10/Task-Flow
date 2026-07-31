@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Murilo Thomé",
+      "email": "murilo@gmail.com",
+      "password": "$2b$10$hashfake1"
+    },
+    {
+      "id": "u2",
+      "name": "João Silva",
+      "email": "joao@gmail.com",
+      "password": "$2b$10$hashfake2"
+    },
+    {
+      "id": "902993c3-5b27-4818-ad3b-678e1e26fd05",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$YGi5N2O.b3//99k3Omm07.4ynFVKo1wQ5amj2C1WyRe.bqJtBfRhW"
+    },
+    {
+      "id": "83f0be6d-4298-45f3-a140-b5e4a6c8b4ce",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$bpRKPd2Y4D2lBmtEZUiWKONptdz.rCa1YMudU.TdJcjBm4VPp8U7i"
+    },
+    {
+      "id": "16a85b1c-f9a8-4eae-853c-49baa9fe6d6d",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$Bwqom.DgFK1KCa4QbEZc7eC3fvsHjT8nkke3MKOQ0KaBCYGlO1F8a"
+    },
+    {
+      "id": "902c2433-5a29-45bf-83cc-dfd30fe84861",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$OGERk8B7GymqgG1Lb21fb.G9y78/TXKkxcJLFOGoE23KQT11.vkfC"
+    },
+    {
+      "id": "cf5316d0-a313-4bd1-8267-a304d8a1f0ba",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$lco5DAWkMr1S9koV5LUOdupK9gdOKP4FrDkOif4YlmR/H4kIwtfMG"
+    },
+    {
+      "id": "e2f2e8fc-154e-4cab-9543-245c20e1e76b",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$BiX9DzfD0LvoftupECbBKek9JBeit3ZxQvpgmvkxSdXsj35/iJkMC"
+    },
+    {
+      "id": "cfd93cda-67d2-4287-ad4f-098017b3cff6",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$FHWKeaYNxTN9OkB28i2Jfe2lijNfwYf4NJnVFE/PHX8XKVoKh9DK2"
+    },
+    {
+      "id": "f7d3eb72-28b8-4f2a-8af3-a4870e978dc2",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$9Jlul48UDweLy5GQvPKhIOS5ZVN1rvVxtIgxDU0IZV89vvkRy.yQy"
+    },
+    {
+      "id": "b81220a3-af96-42a2-aaf0-3274a610f819",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$vuCxmf8W03ukSQs0cI54iubjCbamO58X1r4Jv9c9iXp2fGXC.idc6"
+    },
+    {
+      "id": "70044464-b7e0-4bb5-a1af-adef646affcb",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$17ggBP13E3JuHphYanmwXOmeQG7QgFCtzBlCLCooesZjWG70MiKp2"
+    },
+    {
+      "id": "755aa413-1975-4011-a11a-9ec4d7fb7a97",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$NfyaHJd2Ei4/8NXyFFBtQO8MZRJDvqJ.9ntnTqhSE1suyuALzCd/e"
+    },
+    {
+      "id": "d90c197c-c005-4c3b-8fcf-700717dcf1d8",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$SpY.MaimXPBMgiduQ8LFMOW4z3.aWxE4rKiyfLcro4ccWrGL96IXK"
+    },
+    {
+      "id": "a47f556f-ca84-4159-ac9b-279440c2a02d",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$WRGVPZjqAG5Tqh8wx9QEyeU9mnX31x0GQBjg46JKdbOIGM9XBdk7i"
+    },
+    {
+      "id": "aa21be83-5b1e-4640-9085-8fa98a303b0c",
+      "name": "Murilo Thomé",
+      "email": "admin@email.com",
+      "password": "$2b$10$yySfwzBe3wridaV7eb0Mt.xAzCl3og9l1FLbkPyXxq4x3PrwnCCEe"
+    },
+    {
+      "id": "af5692f4-ff9e-4028-8a9c-124c27c7110f",
+      "name": "Murilo Thomé",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$v3VOcbikbCv85lGAEc04TOsoNWnMqSfxpmBWnJMB/F8KsT6dLrp9a"
+    },
+    {
+      "id": "ec85775b-6c6f-4dc0-b896-524a3afebeb2",
+      "name": "Murilo Thomé",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$AqsyF86f7VTfuvGTKDgoNudad3H2slks.dYRV7W3csWRZ6.dW1w22"
+    },
+    {
+      "id": "d4fe3855-25be-42f1-a915-e4dc2b854549",
+      "name": "Murilo Thomé",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$nSg07E2UN3lEugNLyNHv8eNi9yE2xMEGBaqasu6aWAcCHGlbO2572"
+    },
+    {
+      "id": "f160d66b-a4ee-4079-ac86-232a04397ef7",
+      "name": "diferente",
+      "email": "diferente@gmail.com",
+      "password": "$2b$10$FZhI4YB5RqnJvXzIU4vdIelOTHdQhnzsBcBYHDugbuWuN7M8Qx0Ra"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Estudos React",
+      "description": "Projeto dedicado ao aprendizado de React e TypeScript.",
+      "ownerId": "u1"
+    },
+    {
+      "id": "p2",
+      "name": "TaskFlow",
+      "description": "Desenvolvimento do sistema Kanban.",
+      "ownerId": "u1"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Criar Header",
+      "description": "Implementar o cabeçalho principal.",
+      "status": "done",
+      "projectId": "p2"
+    },
+    {
+      "id": "t2",
+      "title": "Criar Footer",
+      "description": "Implementar o rodapé.",
+      "status": "in-progress",
+      "projectId": "p2"
+    },
+    {
+      "id": "t3",
+      "title": "Estudar React Hook Form",
+      "description": "Aprender validações e integração.",
+      "status": "todo",
+      "projectId": "p1"
+    }
+  ]
+}

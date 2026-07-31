@@ -11,20 +11,22 @@ import { useForm } from "react-hook-form"
 import type { RegisterUser } from "../../types/registerUser"
 import { toast } from "sonner"
 import { ErrorSpan } from "../../components/ErrorSpan"
+import { registerUser } from "../../services/authService"
 
 const CenterDiv = styled.div`
   text-align: center;
 `
 
 const Register = () => {
-  function handleCreateUser(data: RegisterUser) {
+
+  async function handleRegisterUser(data: RegisterUser) {
     try {
-      toast.success('Deu certo!')
-      console.log(data)
+      await registerUser(data)
+      toast.success('Sucesso!')
     } catch (e) {
       toast.error('Erro ao enviar formulário.')
     }
-  }
+  }  
 
   const {
     register,
@@ -38,7 +40,7 @@ const Register = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit(handleCreateUser)}>
+      <Form onSubmit={handleSubmit(handleRegisterUser)}>
         <CenterDiv>
           <Title>Criar conta</Title>
           <EmphasisText>Comece já a organizar suas ideias com o Task Flow</EmphasisText>
