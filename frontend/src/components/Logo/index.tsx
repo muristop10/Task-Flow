@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png'
+import logoLight from '../../assets/LogoLight.png'
+import logoDark from '../../assets/logoDark.png'
 import styled from 'styled-components'
+import { useTheme } from '../../stores/themeStore';
 
 const LogoWrapper = styled.figure`
   display: flex;
@@ -34,9 +36,12 @@ const LogoImg = styled.img`
 `;
 
 const Logo = () => {
+  
+  const {theme} = useTheme()
+
   return (
     <LogoWrapper>
-      <Link to ='/'><LogoImg src={logo} alt='Logo do Task Flow'/></Link>
+      <Link to ='/'><LogoImg src={(theme === 'light' ? logoLight : logoDark)} alt='Logo do Task Flow'/></Link>
     </LogoWrapper>
   )
 }

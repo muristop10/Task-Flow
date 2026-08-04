@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { authRouter } from "./routes";
+import { authRouter, projectsRouter, tasksRouter } from "./routes";
 import fs from "fs/promises";
 
 export const database = "./src/db/db.json";
@@ -15,5 +15,7 @@ app.use(cors());
 app.use(express.json())
 
 app.use("/", authRouter);
+app.use("/", projectsRouter);
+app.use("/", tasksRouter);
 
 export default app;

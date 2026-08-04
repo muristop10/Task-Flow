@@ -5,6 +5,7 @@ import { GlobalStyle } from "./globalStyle";
 import styled from "styled-components";
 import ScrollToTop from "../ScrollToTop";
 import { Toaster } from "sonner";
+import { useTheme } from "../../stores/themeStore";
 
 const Layout = styled.div`
   min-height: 100vh;
@@ -14,12 +15,15 @@ const Layout = styled.div`
 
 
 const Template = () => {
+
+  const { theme } = useTheme();
+
   return (
     <>
       <Toaster
         richColors
         theme="dark" />
-      <GlobalStyle />
+      <GlobalStyle theme={theme}/>
       <ScrollToTop />
 
       <Layout>

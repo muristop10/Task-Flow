@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { Title } from '../../components/Title';
 
 const PageWrapper = styled.div`
   background-color: var(--background);
@@ -271,56 +272,77 @@ export default function TaskFlowLandingPage() {
     <PageWrapper>
       <Container>
         {/* 1. HERO SECTION */}
-        <HeroSection>
-          <HeroTitle>Organize projetos sem complicação.</HeroTitle>
-          <HeroSubtitle>
-            A plataforma ideal para planejar, acompanhar e entregar suas tarefas
-            no prazo, com total clareza e foco no que importa.
-          </HeroSubtitle>
-          <ButtonGroup>
-            <Button variant='primary'>Começar Gratuitamente</Button>
-            <Button variant='secondary'>Saiba Mais</Button>
-          </ButtonGroup>
-        </HeroSection>
+        <Title>
+          Explorando o ecossistema moderno do React.
+        </Title>
+
+        <HeroSubtitle>
+          Um projeto desenvolvido para praticar gerenciamento de estado,
+          formulários, validação de dados, requisições assíncronas e boas
+          práticas utilizando as principais bibliotecas do mercado.
+        </HeroSubtitle>
 
         {/* 2. BENEFÍCIOS */}
-        <BenefitsSection>
-          <SectionHeader>
-            <SectionTitle>Por que escolher o TaskFlow?</SectionTitle>
-          </SectionHeader>
-          <CardsGrid>
-            <BenefitCard>
-              <CardTitle>Organize tarefas</CardTitle>
-              <CardDescription>
-                Crie quadros, defina prioridades e estruture seu fluxo de trabalho de forma intuitiva e visual.
-              </CardDescription>
-            </BenefitCard>
+        <CardsGrid>
+          <BenefitCard>
+            <CardTitle>TanStack Query</CardTitle>
+            <CardDescription>
+              Gerenciamento de estado assíncrono, cache inteligente,
+              sincronização automática e controle de requisições com uma API simples
+              e performática.
+            </CardDescription>
+          </BenefitCard>
 
-            <BenefitCard>
-              <CardTitle>Acompanhe progresso</CardTitle>
-              <CardDescription>
-                Monitore o avanço das atividades em tempo real e identifique gargalos antes que virem problemas.
-              </CardDescription>
-            </BenefitCard>
+          <BenefitCard>
+            <CardTitle>React Hook Form</CardTitle>
+            <CardDescription>
+              Criação de formulários performáticos com mínimo de re-renderizações,
+              simplificando validações e manipulação de estados.
+            </CardDescription>
+          </BenefitCard>
 
-            <BenefitCard>
-              <CardTitle>Trabalhe em equipe</CardTitle>
-              <CardDescription>
-                Centralize a comunicação do time, distribua responsabilidades e mantenha todos alinhados.
-              </CardDescription>
-            </BenefitCard>
-          </CardsGrid>
-        </BenefitsSection>
+          <BenefitCard>
+            <CardTitle>Zod</CardTitle>
+            <CardDescription>
+              Validação de dados e tipagem segura através de schemas,
+              garantindo maior confiabilidade nas entradas do usuário.
+            </CardDescription>
+          </BenefitCard>
+
+          <BenefitCard>
+            <CardTitle>Zustand</CardTitle>
+            <CardDescription>
+              Gerenciamento de estado global leve, intuitivo e sem boilerplate,
+              ideal para aplicações React modernas.
+            </CardDescription>
+          </BenefitCard>
+
+          <BenefitCard>
+            <CardTitle>Sonner</CardTitle>
+            <CardDescription>
+              Sistema elegante de notificações toast para feedbacks rápidos,
+              melhorando a experiência do usuário durante as interações.
+            </CardDescription>
+          </BenefitCard>
+
+          <BenefitCard>
+            <CardTitle>TypeScript</CardTitle>
+            <CardDescription>
+              Tipagem estática que aumenta a produtividade, reduz erros e
+              melhora a manutenção e escalabilidade do código.
+            </CardDescription>
+          </BenefitCard>
+        </CardsGrid>
 
         {/* 3. DEMONSTRAÇÃO VISUAL */}
         <DemoSection>
           <SectionHeader>
-            <SectionTitle>Visão limpa e objetiva</SectionTitle>
+            <SectionTitle>Stack utilizada na aplicação</SectionTitle>
           </SectionHeader>
           <DemoBoardWrapper>
             <BoardHeader>
-              <ProjectTitle>Projeto: Redesign da Aplicação</ProjectTitle>
-              <ProjectBadge>Em Progresso</ProjectBadge>
+              <ProjectTitle>Projeto de Estudos React + TypeScript</ProjectTitle>
+              <ProjectBadge>Frontend Moderno</ProjectBadge>
             </BoardHeader>
 
             <KanbanGrid>

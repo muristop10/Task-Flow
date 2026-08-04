@@ -119,6 +119,12 @@
       "name": "diferente",
       "email": "diferente@gmail.com",
       "password": "$2b$10$FZhI4YB5RqnJvXzIU4vdIelOTHdQhnzsBcBYHDugbuWuN7M8Qx0Ra"
+    },
+    {
+      "id": "959d49ff-f222-4406-8aa3-37f1c730e073",
+      "name": "admin murilao",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$jjbeD7uFjhqiHbQY9XAT4uom9V49aDsClHyoBmVEZvpk95sBZb7ra"
     }
   ],
   "projects": [
@@ -133,6 +139,54 @@
       "name": "TaskFlow",
       "description": "Desenvolvimento do sistema Kanban.",
       "ownerId": "u1"
+    },
+    {
+      "id": "p3",
+      "name": "E-commerce App",
+      "description": "Plataforma de vendas online com carrinho e checkout.",
+      "ownerId": "u2"
+    },
+    {
+      "id": "p4",
+      "name": "Finance Tracker",
+      "description": "Aplicativo para controle de receitas e despesas.",
+      "ownerId": "u2"
+    },
+    {
+      "id": "p5",
+      "name": "Portfolio Dev",
+      "description": "Site pessoal para apresentação de projetos e experiências.",
+      "ownerId": "u3"
+    },
+    {
+      "id": "p6",
+      "name": "Weather Dashboard",
+      "description": "Painel para consulta de previsão do tempo em tempo real.",
+      "ownerId": "u3"
+    },
+    {
+      "id": "p7",
+      "name": "Blog CMS",
+      "description": "Sistema de gerenciamento de conteúdo para blogs.",
+      "ownerId": "u4"
+    },
+    {
+      "id": "p8",
+      "name": "FitLife",
+      "description": "Aplicação para acompanhamento de treinos e metas fitness.",
+      "ownerId": "u4"
+    },
+    {
+      "id": "p9",
+      "name": "Help Desk",
+      "description": "Sistema de abertura e gerenciamento de chamados.",
+      "ownerId": "u5"
+    },
+    {
+      "id": "p10",
+      "name": "Event Manager",
+      "description": "Plataforma para organização e inscrição em eventos.",
+      "ownerId": "u5"
     }
   ],
   "tasks": [
@@ -156,6 +210,132 @@
       "description": "Aprender validações e integração.",
       "status": "todo",
       "projectId": "p1"
+    },
+    {
+      "id": "t4",
+      "title": "Configurar React Query",
+      "description": "Implementar cache e gerenciamento de estado assíncrono.",
+      "status": "done",
+      "projectId": "p1"
+    },
+    {
+      "id": "t5",
+      "title": "Criar tela de Login",
+      "description": "Desenvolver formulário de autenticação.",
+      "status": "done",
+      "projectId": "p3"
+    },
+    {
+      "id": "t6",
+      "title": "Implementar Cadastro",
+      "description": "Criar fluxo de registro de usuários.",
+      "status": "in-progress",
+      "projectId": "p3"
+    },
+    {
+      "id": "t7",
+      "title": "Integração com API",
+      "description": "Consumir endpoints de produtos e categorias.",
+      "status": "todo",
+      "projectId": "p3"
+    },
+    {
+      "id": "t8",
+      "title": "Dashboard Financeiro",
+      "description": "Criar dashboard com gráficos de despesas e receitas.",
+      "status": "in-progress",
+      "projectId": "p4"
+    },
+    {
+      "id": "t9",
+      "title": "Exportar Relatórios",
+      "description": "Permitir exportação em PDF e Excel.",
+      "status": "todo",
+      "projectId": "p4"
+    },
+    {
+      "id": "t10",
+      "title": "Criar seção Sobre Mim",
+      "description": "Adicionar informações profissionais ao portfólio.",
+      "status": "done",
+      "projectId": "p5"
+    },
+    {
+      "id": "t11",
+      "title": "Adicionar Projetos",
+      "description": "Listar projetos desenvolvidos no portfólio.",
+      "status": "in-progress",
+      "projectId": "p5"
+    },
+    {
+      "id": "t12",
+      "title": "Consumir API de Clima",
+      "description": "Buscar dados meteorológicos em tempo real.",
+      "status": "done",
+      "projectId": "p6"
+    },
+    {
+      "id": "t13",
+      "title": "Implementar Busca por Cidade",
+      "description": "Permitir pesquisa de cidades no dashboard.",
+      "status": "todo",
+      "projectId": "p6"
+    },
+    {
+      "id": "t14",
+      "title": "CRUD de Posts",
+      "description": "Criar operações de criação, edição e exclusão de artigos.",
+      "status": "in-progress",
+      "projectId": "p7"
+    },
+    {
+      "id": "t15",
+      "title": "Sistema de Comentários",
+      "description": "Permitir interação dos leitores com os posts.",
+      "status": "todo",
+      "projectId": "p7"
+    },
+    {
+      "id": "t16",
+      "title": "Cadastro de Treinos",
+      "description": "Registrar treinos diários dos usuários.",
+      "status": "done",
+      "projectId": "p8"
+    },
+    {
+      "id": "t17",
+      "title": "Metas Semanais",
+      "description": "Permitir criação e acompanhamento de metas.",
+      "status": "in-progress",
+      "projectId": "p8"
+    },
+    {
+      "id": "t18",
+      "title": "Abertura de Chamados",
+      "description": "Criar formulário para registro de chamados.",
+      "status": "done",
+      "projectId": "p9"
+    },
+    {
+      "id": "t19",
+      "title": "Painel Administrativo",
+      "description": "Gerenciar chamados e usuários.",
+      "status": "todo",
+      "projectId": "p9"
+    },
+    {
+      "id": "t20",
+      "title": "Sistema de Inscrições",
+      "description": "Permitir inscrição dos participantes em eventos.",
+      "status": "in-progress",
+      "projectId": "p10"
+    },
+    {
+      "id": "t21",
+      "title": "Envio de Certificados",
+      "description": "Automatizar emissão de certificados após eventos.",
+      "status": "todo",
+      "projectId": "p10"
     }
   ]
 }

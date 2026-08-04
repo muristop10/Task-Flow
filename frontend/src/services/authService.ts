@@ -13,8 +13,7 @@ export async function registerUser(
             },
             body: JSON.stringify(userData),
         }
-    );
-
+    )
     const data = await result.json();
 
     if (!result.ok) {
@@ -22,6 +21,5 @@ export async function registerUser(
             data.message || "Erro ao criar usuário."
         );
     }
-
     return data;
 }

@@ -1,28 +1,45 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
-
+export const GlobalStyle = createGlobalStyle<{
+  theme: "light" | "dark";
+}>`
   :root {
-    --primary: #6366F1;
-    --primary-dark: #4F46E5;
+    --primary: ${({ theme }) =>
+      theme === "dark" ? "#818CF8" : "#6366F1"};
 
-    --background: #F8FAFC;
-    --surface: #FFFFFF;
+    --primary-dark: ${({ theme }) =>
+      theme === "dark" ? "#6366F1" : "#4F46E5"};
 
-    --text-primary: #0F172A;
-    --text-secondary: #64748B;
+    --background: ${({ theme }) =>
+      theme === "dark" ? "#0F172A" : "#F8FAFC"};
 
-    --border: #E2E8F0;
+    --surface: ${({ theme }) =>
+      theme === "dark" ? "#1E293B" : "#FFFFFF"};
+
+    --text-primary: ${({ theme }) =>
+      theme === "dark" ? "#F8FAFC" : "#0F172A"};
+
+    --text-secondary: ${({ theme }) =>
+      theme === "dark" ? "#CBD5E1" : "#64748B"};
+
+    --border: ${({ theme }) =>
+      theme === "dark" ? "#334155" : "#E2E8F0"};
 
     --success: #10B981;
     --error: #EF4444;
     --warning: #F59E0B;
 
     --shadow:
-      0 10px 20px rgba(15, 23, 42, 0.06);
+      ${({ theme }) =>
+        theme === "dark"
+          ? "0 10px 20px rgba(0,0,0,.35)"
+          : "0 10px 20px rgba(15,23,42,.06)"};
 
     --shadow-hover:
-      0 15px 40px rgba(15, 23, 42, 0.12);
+      ${({ theme }) =>
+        theme === "dark"
+          ? "0 15px 40px rgba(0,0,0,.5)"
+          : "0 15px 40px rgba(15,23,42,.12)"};
   }
 
   * {
@@ -43,8 +60,11 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--text-primary);
 
     font-family: "Inter", sans-serif;
-
     line-height: 1.5;
+
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -87,7 +107,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--primary);
+    color: white;
   }
 
   ::-webkit-scrollbar {
@@ -95,15 +116,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--background);
+    background: var(--surface);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: ${({ theme }) =>
+      theme === "dark" ? "#475569" : "#CBD5E1"};
+
     border-radius: 999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #94A3B8;
+    background: ${({ theme }) =>
+      theme === "dark" ? "#64748B" : "#94A3B8"};
   }
-`;
+`
