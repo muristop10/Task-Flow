@@ -9,6 +9,7 @@ export async function getTasks() {
   if (!res.ok) {
     throw new Error("Erro ao receber tarefas.");
   } else {
+    console.log('fetch')
     return res.json();
   }
 }

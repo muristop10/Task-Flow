@@ -8,12 +8,17 @@ import Tasks from "../pages/tasks";
 import Settings from "../pages/settings";
 import Profile from "../pages/profile";
 import EditProfile from "../pages/profile/EditProfile";
+import NotFound from "../components/NotFound";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Template />,
         children: [
+            {
+                path: '*',
+                element: <NotFound />
+            },
             {
                 path: '/',
                 element: <Home />

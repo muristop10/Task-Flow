@@ -4,6 +4,7 @@ export const ErrorSpan = styled.span`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 8px;
 
   width: 100%;
 
@@ -19,9 +20,4 @@ export const ErrorSpan = styled.span`
 
   font-size: 0.85rem;
   font-weight: 500;
-
-  &::before {
-    content: "⚠";
-    flex-shrink: 0;
-  }
 `;

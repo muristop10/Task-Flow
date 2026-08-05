@@ -6,6 +6,6 @@ interface ThemeState {
 }
 
 export const useTheme = create<ThemeState>((set) => ({
-    theme: 'light',
+    theme: 'dark',
     setTheme: (theme) => set({theme})
  }))

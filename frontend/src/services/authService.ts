@@ -1,8 +1,9 @@
 import { API_URL } from "../constants";
-import type { RegisterUser } from "../types/registerUser";
+import type { iLoginUser } from "../schemas/loginUser";
+import type { iRegisterUser } from "../schemas/registerUser";
 
 export async function registerUser(
-    userData: RegisterUser
+    userData: iRegisterUser
 ) {
     const result = await fetch(
         `${API_URL}/register`,
@@ -20,6 +21,25 @@ export async function registerUser(
         throw new Error(
             data.message || "Erro ao criar usuário."
         );
+    }
+    return data;
+}
+
+export async function loginUser(
+    userData: iLoginUser
+) {
+    const result = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    const data = await result.json();
+    if (!result.ok) {
+        throw new Error (
+            data.message || 'Erro ao fazer login.'
+        )
     }
     return data;
 }

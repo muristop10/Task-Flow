@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+import { ErrorSpan } from '../ErrorSpan';
+import { BiSolidMessageSquareError } from 'react-icons/bi';
 
 interface FullInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  error?: string | undefined;
 }
 
 export const StyledLabel = styled.label`
@@ -68,6 +71,7 @@ const StyledInput = styled.input`
 const FullInput = ({
   label,
   id,
+  error,
   ...rest
 }: FullInputProps) => {
   return (
@@ -81,6 +85,13 @@ const FullInput = ({
         name={id}
         {...rest}
       />
+
+    {(error && (
+      <ErrorSpan>
+        <BiSolidMessageSquareError /> 
+        {error}
+      </ErrorSpan>
+    ))}
     </div>
   );
 };

@@ -8,7 +8,9 @@ import { Title } from "../../components/Title"
 import styled from "styled-components"
 import { InAppTextLink } from "../../components/InAppTextLink"
 import { useForm } from "react-hook-form"
-import type { LoginUser } from "../../types/loginUser"
+import { createUserLoginSchema, type iLoginUser } from "../../schemas/loginUser"
+import { toast } from "sonner"
+import { loginUser } from "../../services/authService"
 
 const CenterDiv = styled.div`
   text-align: center;
@@ -17,10 +19,17 @@ const CenterDiv = styled.div`
 const Login = () => {
 
   const navigate = useNavigate()
-  const { register, handleSubmit } = useForm<LoginUser>()
+  const { register, handleSubmit } = useForm<iLoginUser>()
 
-  function handleLogin (data: LoginUser) {
-    console.log(data)
+  async function handleLogin(data: iLoginUser) {
+    try {
+      await loginUser(data)
+      toast.success('Sucesso!')
+      navigate('/')
+    } catch (e) {
+      toast.error('Erro ao fazer login.')
+      console.log('Erro: ', e)
+    }
   }
 
   return (
@@ -30,16 +39,18 @@ const Login = () => {
           <Title>Entrar na conta</Title>
         </CenterDiv>
         <FullInput id='email' label="Email:" placeholder="Email"
-        {...register('email')} />
+          {...register('email')} />
+
         <FullInput id='password' label="Senha:" placeholder="Senha"
-        {...register('password')}  />
+          {...register('password')} />
+
         <section>
           <Button type='submit' variant='submit'>Fazer login</Button>
           <Button onClick={() => navigate('/')} variant={'secondary'}>Voltar à página inicial</Button>
         </section>
         <p>Ainda não tem conta? <InAppTextLink to='/register'>Crie sua conta agora</InAppTextLink></p>
       </Form>
-      </Container>
+    </Container>
   )
 }
 

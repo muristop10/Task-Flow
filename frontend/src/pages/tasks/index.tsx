@@ -3,14 +3,15 @@ import { Title } from "../../components/Title"
 import Loader from "../../components/Loader"
 import { ProjectsContainer } from "../projects"
 import { getTasks } from "../../services/tasksService"
-import type { iTask } from "../../types/tasks"
 import TaskCard from "../../components/TaskCard"
+import type { iTask } from "../../schemas/tasks"
 
 const Tasks = () => {
 
   const { data: tasks = [], error, isLoading } = useQuery<iTask[]>({
     queryKey: ['tasks'],
-    queryFn: getTasks
+    queryFn: getTasks,
+    staleTime: 1000 * 60 * 5
   })
 
   if (isLoading) {

@@ -20,33 +20,6 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-/* Buttons */
-const ButtonGroup = styled.div`
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-/* Hero Section */
-const HeroSection = styled.section`
-  text-align: center;
-  padding: 5rem 1rem 4rem;
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 3.25rem;
-  line-height: 1.15;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 1.25rem;
-
-  @media (max-width: 768px) {
-    font-size: 2.25rem;
-  }
-`;
 
 const HeroSubtitle = styled.p`
   font-size: 1.25rem;
@@ -57,12 +30,6 @@ const HeroSubtitle = styled.p`
   @media (max-width: 768px) {
     font-size: 1.1rem;
   }
-`;
-
-/* Benefits Section */
-const BenefitsSection = styled.section`
-  padding: 4rem 0;
-  width: 100%;
 `;
 
 const SectionHeader = styled.div`

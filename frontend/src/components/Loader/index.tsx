@@ -1,26 +1,56 @@
-import React from 'react'
 import styled from 'styled-components';
 
 const StyledLoader = styled.div`
   width: 40px;
-  aspect-ratio: 1.154;
-  --_g: no-repeat radial-gradient(farthest-side,#000 90%,#0000);
-  background: 
-    var(--_g) 50%  0,
-    var(--_g) 0    100%,
-    var(--_g) 100% 100%;
-  background-size: 35% calc(35%*1.154);
-  animation: l16 1s infinite;
+  aspect-ratio: 1;
+  position: relative;
 
-  @keyframes l16{ 
-    50%,100% {background-position: 100% 100%,50% 0,0 100%} 
-}
-`
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -8px 0 0 -8px;
+    width: 16px;
+    aspect-ratio: 1;
+    background: #3FB8AF;
+
+    animation:
+      l2-1 2s infinite,
+      l2-2 1s infinite;
+  }
+
+  &:after {
+    background: #FF3D7F;
+    animation-delay: -1s, 0s;
+  }
+
+  @keyframes l2-1 {
+    0% { top: 0; left: 0; }
+    25% { top: 100%; left: 0; }
+    50% { top: 100%; left: 100%; }
+    75% { top: 0; left: 100%; }
+    100% { top: 0; left: 0; }
+  }
+
+  @keyframes l2-2 {
+    40%, 50% {
+      transform: rotate(0.25turn) scale(0.5);
+    }
+
+    100% {
+      transform: rotate(0.5turn) scale(1);
+    }
+  }
+`;
 
 const Loader = () => {
-    return (
-        <StyledLoader />
-    )
+  return (
+    <div style={{ margin: 'auto' }}>
+      <StyledLoader />
+    </div>
+  )
 }
 
 export default Loader
