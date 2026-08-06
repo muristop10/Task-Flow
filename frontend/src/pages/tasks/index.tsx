@@ -4,7 +4,7 @@ import Loader from "../../components/Loader"
 import { ProjectsContainer } from "../projects"
 import { getTasks } from "../../services/tasksService"
 import TaskCard from "../../components/TaskCard"
-import type { iTask } from "../../schemas/tasks"
+import type { iTask } from "../../schemas/tasks.schema"
 
 const Tasks = () => {
 

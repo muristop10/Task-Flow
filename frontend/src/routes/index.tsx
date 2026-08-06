@@ -9,6 +9,7 @@ import Settings from "../pages/settings";
 import Profile from "../pages/profile";
 import EditProfile from "../pages/profile/EditProfile";
 import NotFound from "../components/NotFound";
+import RouteProtector from "../components/RouteProtector";
 
 export const router = createBrowserRouter([
     {
@@ -33,23 +34,33 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/projects',
-                element: <Projects />
+                element: (<RouteProtector>
+                    <Projects />
+                </RouteProtector>)
             },
             {
                 path: '/tasks',
-                element: <Tasks />
+                element: (<RouteProtector>
+                    <Tasks />
+                </RouteProtector>)
             },
             {
                 path: '/settings',
-                element: <Settings />
+                element: (<RouteProtector>
+                    <Settings />
+                </RouteProtector>)
             },
             {
                 path: '/profile',
-                element: <Profile />,
+                element: (<RouteProtector>
+                    <Profile />
+                </RouteProtector>),
                 children: [
                     {
                         path: 'edit',
-                        element: <EditProfile />
+                        element: (<RouteProtector>
+                            <EditProfile />
+                        </RouteProtector>)
                     }
                 ]
             }

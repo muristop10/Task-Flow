@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import { GlobalStyle } from "./globalStyle";
@@ -6,6 +6,8 @@ import styled from "styled-components";
 import ScrollToTop from "../ScrollToTop";
 import { Toaster } from "sonner";
 import { useTheme } from "../../stores/themeStore";
+import { useAuth } from "../../stores/userStore";
+import { useEffect } from "react";
 
 const Layout = styled.div`
   min-height: 100vh;
@@ -16,7 +18,13 @@ const Layout = styled.div`
 
 const Template = () => {
 
+  const { checkAuth } = useAuth()
   const { theme } = useTheme();
+  const pathname = useLocation()
+
+  useEffect(() => {
+    checkAuth()
+  }, [pathname, checkAuth])
 
   return (
     <>

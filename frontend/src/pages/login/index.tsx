@@ -8,7 +8,7 @@ import { Title } from "../../components/Title"
 import styled from "styled-components"
 import { InAppTextLink } from "../../components/InAppTextLink"
 import { useForm } from "react-hook-form"
-import { createUserLoginSchema, type iLoginUser } from "../../schemas/loginUser"
+import { type iLoginUser } from "../../schemas/loginUser.schema"
 import { toast } from "sonner"
 import { loginUser } from "../../services/authService"
 

@@ -9,9 +9,9 @@ import { EmphasisText } from "../../components/EmphasisText"
 import styled from "styled-components"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
-import { ErrorSpan } from "../../components/ErrorSpan"
+
 import { registerUser } from "../../services/authService"
-import { createRegisterUserSchema, type iRegisterUser } from "../../schemas/registerUser"
+import { createRegisterUserSchema, type iRegisterUser } from "../../schemas/registerUser.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 const CenterDiv = styled.div`
@@ -34,7 +34,6 @@ const Register = () => {
     register,
     handleSubmit,
     formState: { errors },
-    watch
   } = useForm<iRegisterUser>({
     resolver: zodResolver(createRegisterUserSchema)
   })
@@ -61,7 +60,7 @@ const Register = () => {
           {...register('password')}/>
 
         <FullInput id='confirmPassword' label="Confirmar senha:" 
-        placeholder="Confirmar senha:" error={errors.confirmPassword?.message}
+        placeholder="Confirmar senha" error={errors.confirmPassword?.message}
           {...register('confirmPassword')} />
 
         <section>
