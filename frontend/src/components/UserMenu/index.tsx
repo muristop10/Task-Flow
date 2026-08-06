@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { EmphasisText } from "../EmphasisText"
 import type { iUser } from "../../schemas/user.schema"
 
 
@@ -45,7 +44,6 @@ const UserMenu = ({ user }: { user: iUser }) => {
     return (
         <Section>
             <UserInfo>
-                <EmphasisText>{user.email}</EmphasisText>
                 <h3>{user.name}</h3>
             </UserInfo>
         </Section>

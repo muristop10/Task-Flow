@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useAuth } from '../../stores/userStore'
 import { toast } from 'sonner'
 import { useNavigate } from 'react-router-dom'
+import Loader from '../Loader'
 
 const RouteProtector = ({ children }: { children: React.ReactNode }) => {
 
@@ -19,10 +20,15 @@ const RouteProtector = ({ children }: { children: React.ReactNode }) => {
     }
   }, [isLoading, user, token, navigate])
 
+  if (isLoading) {
+    return <Loader />
+  }
 
-  return <>
-    {children}
-  </>
+  if (!user || !token) {
+    return null
+  }
+
+  return <>{children}</>
 }
 
 export default RouteProtector

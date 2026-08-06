@@ -20,11 +20,10 @@ const Template = () => {
 
   const { checkAuth } = useAuth()
   const { theme } = useTheme();
-  const pathname = useLocation()
 
   useEffect(() => {
     checkAuth()
-  }, [pathname, checkAuth])
+  }, [checkAuth])
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { getMe } from "../services/authService";
+import { getMe } from "../services/meService";
 import type { iUser } from "../schemas/user.schema";
 interface AuthProps {
   isLoading: boolean;
@@ -30,18 +30,11 @@ export const useAuth = create<AuthProps>((set) => ({
 checkAuth: async () => {
   const token = localStorage.getItem('token');
 
-  console.log('TOKEN:', token);
-
   if (!token) {
     set({ user: null, isLoading: false, token: null });
   } else {
     try {
-      console.log('Chamando /me');
-
       const userData = await getMe(token);
-
-      console.log('USER DATA:', userData);
-
       set({
         user: userData,
         isLoading: false,

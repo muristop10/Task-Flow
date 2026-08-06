@@ -23,7 +23,7 @@ const Login = () => {
 
   const navigate = useNavigate()
   const { register, handleSubmit } = useForm<iLoginUser>()
-  const { setAuth, user } = useAuth()
+  const { setAuth } = useAuth()
 
   const loginMutation = useMutation({
     mutationFn: loginUser,

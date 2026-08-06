@@ -23,7 +23,9 @@ const Container = styled.header`
   z-index: 100;
 
   @media (max-width: 768px) {
+    height: 40px;
     flex-direction: column;
+    position: relative;
     height: auto;
     padding: 1rem;
     gap: 1rem;
