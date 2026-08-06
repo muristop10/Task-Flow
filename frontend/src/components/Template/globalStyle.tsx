@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle<{
   theme: "light" | "dark";
 }>`
+
   :root {
     --primary: ${({ theme }) =>
       theme === "dark" ? "#818CF8" : "#6366F1"};

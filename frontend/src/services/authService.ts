@@ -37,11 +37,10 @@ export async function getMe(token: string) {
   const res = await fetch(`${API_URL}/me`, {
     method: `GET`,
     headers: {
-      "Content-type:": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
-  const data = res.json();
+  const data = await res.json();
   if (!res.ok) {
     throw new Error("Sessão inválida / token expirado.");
   } else {

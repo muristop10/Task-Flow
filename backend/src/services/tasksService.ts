@@ -1,13 +1,9 @@
-import fs from "fs/promises";
-import { database } from "../main";
+import { initializeDb } from "../main";
 
 export async function getTasksService() {
-  const data = await fs.readFile(
-    database,
-    "utf-8"
-  );
+  const db = await initializeDb()
 
-  const {tasks} = JSON.parse(data);
+  const {tasks} = JSON.parse(db);
 
   return tasks;
 }

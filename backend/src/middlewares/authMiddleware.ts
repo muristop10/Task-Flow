@@ -26,7 +26,7 @@ export function ensureAuthenticated(
   const JWT_SECRET = process.env.JWT_SECRET;
 
   if (!JWT_SECRET) {
-    throw new Error("VARIÁVEIS .ENV NÃO DEFINIDAS!");
+    throw new Error("VARIAVEL .ENV NÃO DEFINIDA!");
   }
 
   // Checa se o cabeçalho veio na requisição
@@ -59,7 +59,7 @@ export function ensureAuthenticated(
 
     // Permite que a requisição siga para a controller/rota
     return next();
-  } catch (error) {
+  } catch {
     return res.status(401).json({
       message: 'Token inválido ou expirado.',
     });

@@ -1,6 +1,6 @@
-import type { iProject } from '../../types/projects'
 
 import styled from "styled-components";
+import type { iProject } from "../../schemas/projects.schema";
 
 export const ProjectContainer = styled.div`
   background: var(--surface);

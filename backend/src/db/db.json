@@ -125,6 +125,18 @@
       "name": "admin murilao",
       "email": "admin@gmail.com",
       "password": "$2b$10$jjbeD7uFjhqiHbQY9XAT4uom9V49aDsClHyoBmVEZvpk95sBZb7ra"
+    },
+    {
+      "id": "d6fb7c96-91cd-4d1e-8269-81d60ab8ba6c",
+      "name": "Murilo Thomé",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$L8.csbFzz/O5fek2PAQnK.g.S9Qpg0HFQNApy4JdgdSSJJE74Po/O"
+    },
+    {
+      "id": "e85e63a9-9d91-48f9-a159-4c7095445648",
+      "name": "adm",
+      "email": "adm@gmail.com",
+      "password": "$2b$10$l8dcYuabV44O0Or//hKxWOkWGgbzQxZ9FZgsJF6BZ81EcMbayNz3O"
     }
   ],
   "projects": [

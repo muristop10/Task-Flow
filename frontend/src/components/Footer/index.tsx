@@ -79,43 +79,43 @@ const Copyright = styled.div`
 `;
 
 const Footer = () => {
-    return (
-        <Container>
-            <ContactSection>
-                <Logo />
+  return (
+    <Container>
+      <ContactSection>
+        <Logo />
 
-                <p>
-                    Organize projetos e acompanhe tarefas de forma simples e eficiente.
-                </p>
+        <p>
+          Organize projetos e acompanhe tarefas de forma simples e eficiente.
+        </p>
 
-                <SocialLinks>
-                    <Link to='https://github.com/muristop10' target="_blank"><FaGithub /></Link>
-                    <Link to='mailto:murilo.et@aluno.ifsc.edu.br' target="_blank"><SiGmail /></Link>
-                    <Link to='https://instagram.com/muristop10'
-                        target="_blank"
-                        rel="noopener noreferrer"><FaInstagram /></Link>
-                </SocialLinks>
-            </ContactSection>
+        <SocialLinks>
+          <Link to='https://github.com/muristop10' target="_blank"><FaGithub /></Link>
+          <Link to='mailto:murilo.et@aluno.ifsc.edu.br' target="_blank"><SiGmail /></Link>
+          <Link to='https://instagram.com/muristop10'
+            target="_blank"
+            rel="noopener noreferrer"><FaInstagram /></Link>
+        </SocialLinks>
+      </ContactSection>
 
-            <FooterNav>
-                <Link to="/projects">Projetos</Link>
+      <FooterNav>
+        <Link to="/projects">Projetos</Link>
 
-                <Link to="/tasks">
-                    Minhas Tarefas
-                </Link>
+        <Link to="/tasks">
+          Minhas Tarefas
+        </Link>
 
-                <Link to="/profile">
-                    Perfil
-                </Link>
-            </FooterNav>
+        <Link to="/profile">
+          Perfil
+        </Link>
+      </FooterNav>
 
-            <Copyright>
-                © 2026 TaskFlow
-                <br />
-                Desenvolvido por Murilo Thomé
-            </Copyright>
-        </Container>
-    );
+      <Copyright>
+        © 2026 TaskFlow
+        <br />
+        Desenvolvido por Murilo Thomé
+      </Copyright>
+    </Container>
+  );
 };
 
 export default Footer

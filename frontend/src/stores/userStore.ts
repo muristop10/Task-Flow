@@ -1,12 +1,11 @@
 import { create } from "zustand";
-import type { iLoginUser } from "../schemas/loginUser.schema";
 import { getMe } from "../services/authService";
-
+import type { iUser } from "../schemas/user.schema";
 interface AuthProps {
   isLoading: boolean;
-  user: iLoginUser | null;
+  user: iUser | null;
   token: string | null;
-  setAuth: (token: string, user: iLoginUser) => void;
+  setAuth: (token: string, user: iUser) => void;
   logout: () => void;
   checkAuth: () => Promise<void>;
 }
@@ -28,20 +27,37 @@ export const useAuth = create<AuthProps>((set) => ({
   },
 
   // validations
-  checkAuth: async () => {
-    // validade do token
-    const token = localStorage.getItem('token')
-    if (!token) {
-        set({ user: null, isLoading: false, token: null });
-    } else {
-        try {
-            const userData = await getMe(token)
-            set({user: userData, isLoading: false, token: token})
-        } catch (e) {
-            localStorage.removeItem('token')
-            console.log(`${e}`)
-            set({ user: null, isLoading: false, token: null });
-        }
+checkAuth: async () => {
+  const token = localStorage.getItem('token');
+
+  console.log('TOKEN:', token);
+
+  if (!token) {
+    set({ user: null, isLoading: false, token: null });
+  } else {
+    try {
+      console.log('Chamando /me');
+
+      const userData = await getMe(token);
+
+      console.log('USER DATA:', userData);
+
+      set({
+        user: userData,
+        isLoading: false,
+        token
+      });
+    } catch (e) {
+      console.error('ERRO NO GETME:', e);
+
+      localStorage.removeItem('token');
+
+      set({
+        user: null,
+        isLoading: false,
+        token: null
+      });
     }
   }
+}
 }));

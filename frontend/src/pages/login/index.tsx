@@ -11,6 +11,9 @@ import { useForm } from "react-hook-form"
 import { type iLoginUser } from "../../schemas/loginUser.schema"
 import { toast } from "sonner"
 import { loginUser } from "../../services/authService"
+import { ErrorSpan } from "../../components/ErrorSpan"
+import { useMutation } from "@tanstack/react-query"
+import { useAuth } from "../../stores/userStore"
 
 const CenterDiv = styled.div`
   text-align: center;
@@ -20,16 +23,21 @@ const Login = () => {
 
   const navigate = useNavigate()
   const { register, handleSubmit } = useForm<iLoginUser>()
+  const { setAuth, user } = useAuth()
 
-  async function handleLogin(data: iLoginUser) {
-    try {
-      await loginUser(data)
-      toast.success('Sucesso!')
+  const loginMutation = useMutation({
+    mutationFn: loginUser,
+    onSuccess: (data) => {
+      localStorage.setItem('token', data.token)
+      setAuth(data.token, data.user)
+
+      toast.success('Logado com sucesso!')
       navigate('/')
-    } catch (e) {
-      toast.error('Erro ao fazer login.')
-      console.log('Erro: ', e)
     }
+  })
+
+  function handleLogin (data: iLoginUser) {
+    loginMutation.mutate(data)
   }
 
   return (
@@ -41,10 +49,13 @@ const Login = () => {
         <FullInput id='email' label="Email:" placeholder="Email"
           {...register('email')} />
 
-        <FullInput id='password' label="Senha:" placeholder="Senha"
+        <FullInput id='password' label="Senha:" placeholder="Senha" type='password'
           {...register('password')} />
 
         <section>
+          {loginMutation.isError && (
+            <ErrorSpan>{(loginMutation.error as Error).message}</ErrorSpan>
+          )}
           <Button type='submit' variant='submit'>Fazer login</Button>
           <Button onClick={() => navigate('/')} variant={'secondary'}>Voltar à página inicial</Button>
         </section>

@@ -13,6 +13,8 @@ import { toast } from "sonner"
 import { registerUser } from "../../services/authService"
 import { createRegisterUserSchema, type iRegisterUser } from "../../schemas/registerUser.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useMutation } from "@tanstack/react-query"
+import { ErrorSpan } from "../../components/ErrorSpan"
 
 const CenterDiv = styled.div`
   text-align: center;
@@ -20,14 +22,16 @@ const CenterDiv = styled.div`
 
 const Register = () => {
 
-  async function handleRegisterUser(data: iRegisterUser) {
-    try {
-      await registerUser(data)
-      toast.success('Sucesso!')
-    } catch (e) {
-      toast.error('Erro ao enviar formulário.')
-      console.log(e)
+  const registerMutation = useMutation({
+    mutationFn: registerUser,
+    onSuccess: () => {
+      toast.success('Sucesso! Faça login!')
+      navigate('/login')
     }
+  })
+
+  async function handleRegisterUser(data: iRegisterUser) {
+    registerMutation.mutate(data)
   }
 
   const {
@@ -47,23 +51,26 @@ const Register = () => {
           <EmphasisText>Comece já a organizar suas ideias com o Task Flow</EmphasisText>
         </CenterDiv>
 
-        <FullInput id='name' label="Nome:" 
-        placeholder="Nome" error={errors.name?.message}
+        <FullInput id='name' label="Nome:"
+          placeholder="Nome" error={errors.name?.message}
           {...register('name')} />
 
-        <FullInput id='email' label="Email:" 
-        placeholder="Email" error={errors.email?.message}
+        <FullInput id='email' label="Email:"
+          placeholder="Email" error={errors.email?.message}
           {...register('email')} />
 
-        <FullInput id='password' label="Senha:" 
-        placeholder="Senha" error={errors.password?.message}
-          {...register('password')}/>
+        <FullInput id='password' label="Senha:" type='password'
+          placeholder="Senha" error={errors.password?.message}
+          {...register('password')} />
 
-        <FullInput id='confirmPassword' label="Confirmar senha:" 
-        placeholder="Confirmar senha" error={errors.confirmPassword?.message}
+        <FullInput id='confirmPassword' label="Confirmar senha:" type='password'
+          placeholder="Confirmar senha" error={errors.confirmPassword?.message}
           {...register('confirmPassword')} />
 
         <section>
+          {registerMutation.isError && (
+            <ErrorSpan>{(registerMutation.error as Error).message}</ErrorSpan>
+          )}
           <Button type='submit' variant='submit'>Cadastre-se</Button>
           <Button onClick={() => navigate('/')} variant={'secondary'}>Voltar à página inicial</Button>
         </section>
