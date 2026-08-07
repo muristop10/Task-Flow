@@ -6,8 +6,7 @@ export const createDefaultUserSchema = z.object({
     .refine((value) => !/\d/.test(value), {
         message: 'O nome não deve conter números.'
     }),
-    email: z.email('Email inválido.'),
-    password: z.string()
+    email: z.email('Email inválido.')
 })
 
 export type iUser = z.infer<typeof createDefaultUserSchema>

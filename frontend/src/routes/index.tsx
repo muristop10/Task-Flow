@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
                 </RouteProtector>),
                 children: [
                     {
-                        path: 'edit',
+                        path: 'editProfile',
                         element: (<RouteProtector>
                             <EditProfile />
                         </RouteProtector>)

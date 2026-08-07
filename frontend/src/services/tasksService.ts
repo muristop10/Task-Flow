@@ -10,7 +10,7 @@ export async function getTasks() {
   });
   const data = await res.json()
   if (!res.ok) {
-   console.log( data.message || "Erro ao receber tarefas.");
+  throw new Error ( data.message || "Erro ao receber tarefas.");
   } else {
     return data;
   }

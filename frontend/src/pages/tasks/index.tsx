@@ -13,9 +13,7 @@ const Tasks = () => {
     queryFn: getTasks,
     staleTime: 1000 * 60 * 5
   })
-
-  console.log(tasks)
-
+  
   if (isLoading) {
     return <Loader />
   }

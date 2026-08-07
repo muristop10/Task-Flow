@@ -8,19 +8,32 @@ export async function me(
   res: Response
 ) {
   const db = await initializeDb();
-
   const user = db.users.find(
     (user: iUser) => user.id === req.user?.id
   );
-
   if (!user) {
     return res.status(404).json({
       message: 'Usuário não encontrado'
     });
   }
-
   const { password: _, ...userWithoutPassword } = user;
-
-
   return res.json(userWithoutPassword);
-}
+} 
+ 
+export async function editMe (
+  req: AuthenticatedRequest,
+  res: Response
+) {
+  const db = await initializeDb();
+  const user = db.users.find(
+    (user: iUser) => user.id === req.user?.id
+  );
+  if (!user) {
+    return res.status(404).json({
+      message: 'Usuário não encontrado'
+    });
+  }
+  const { password: _, ...userWithoutPassword } = user;
+  return res.json(userWithoutPassword);
+} 
+ 

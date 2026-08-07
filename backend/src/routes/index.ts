@@ -1,22 +1,30 @@
 import { Router } from 'express'
 import { register } from '../controllers/authController'
-import { projects } from '../controllers/projectsController'
-import { tasks } from '../controllers/tasksController'
+import { deleteProjects, getProjects, patchProjects, postProjects } from '../controllers/projectsController'
+import { deleteTasks, getTasks, patchTasks, postTasks } from '../controllers/tasksController'
 import { ensureAuthenticated } from '../middlewares/authMiddleware'
 import { login } from '../controllers/loginController'
-import { me } from '../controllers/meController'
+import { editMe, me } from '../controllers/meController'
 
-export const authRouter = Router()
-authRouter.post('/register', register)
+// signup
+export const router = Router()
+router.post('/register', register)
 
-export const loginRouter = Router()
-loginRouter.post('/login', login)
+// login
+router.post('/login', login)
 
-export const projectsRouter = Router()
-projectsRouter.get('/projects', ensureAuthenticated, projects)
+// projects
+router.get('/projects', ensureAuthenticated, getProjects)
+router.post('/projects/', ensureAuthenticated, postProjects)
+router.patch('/projects/:id', ensureAuthenticated, patchProjects)
+router.delete('/projects/:id', ensureAuthenticated, deleteProjects)
 
-export const tasksRouter = Router()
-tasksRouter.get('/tasks', ensureAuthenticated, tasks)
+// tasks
+router.get('/tasks', ensureAuthenticated, getTasks)
+router.post('/tasks', ensureAuthenticated, postTasks)
+router.patch('/tasks/:id', ensureAuthenticated, patchTasks)
+router.delete('/tasks/:id', ensureAuthenticated, deleteTasks)
 
-export const meRouter = Router()
-tasksRouter.get('/me', ensureAuthenticated, me)
+// me
+router.get('/me', ensureAuthenticated, me)
+router.patch('/me', ensureAuthenticated, editMe)

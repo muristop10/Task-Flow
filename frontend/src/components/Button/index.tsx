@@ -4,7 +4,7 @@ interface ButtonProps {
     variant: 'primary' | 'secondary' | 'submit' | 'error'
     onClick?: () => void;
     children: React.ReactNode;
-    type?: 'submit'
+    type?: 'submit' | 'button'
 }
 
 const StyledButton = styled.button<{

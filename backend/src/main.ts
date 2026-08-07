@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { authRouter, loginRouter, meRouter, projectsRouter, tasksRouter } from "./routes";
+import { router } from "./routes";
 import fs from "fs/promises";
 
 export const database = "./src/db/db.json";
@@ -14,10 +14,6 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.use("/", authRouter);
-app.use("/", projectsRouter);
-app.use("/", tasksRouter);
-app.use("/", loginRouter);
-app.use("/", meRouter);
+app.use("/", router);
 
 export default app;
